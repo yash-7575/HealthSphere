@@ -1,0 +1,43 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditation and Sleep Made Simple</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+<body>
+    <div class="navbar">
+        <p id="MindMatters" style="color: black;">HealthSphere</p>
+        <a href="{% url 'home' %}" id="ele1">Home</a>
+        <a href="{% url 'articles_and_resources' %}" id="ele2">Articles and Resources</a>
+        <a href="{% url 'meditation' %}" id="ele3">Meditation</a>
+        {% comment %} <a href="{% url 'sleep' %}" id="ele4">Sleep</a> {% endcomment %}
+        <a href="{% url 'mindfulness' %}" id="ele5">Mindfulness</a>
+        <a href="{% url 'exercise' %}" id="ele6">Exercise</a>
+        <a href="{% url 'plans' %}" id="ele7">Plans</a>
+        <a href="{% url 'for_business' %}" id="ele8">For business</a>
+        <a href="{% url 'about' %}" id="ele9">About</a>
+        <a href="{% url 'help' %}" id="ele10">Help</a>
+        <a href="{% url 'login' %}" id="ele11">Login</a>
+    </div>
+    
+
+    <div class="section1">
+        <div class="sec1_left">
+            <p>What's new</p>
+        </div>
+
+        <div class="sec1_right">
+            <p>Explore the latest in mindfulness, sleep, and mental health. From new meditations to sleep sounds, we've got you covered.</p>
+        </div>
+    </div>
+    <br>
+
+    {% comment %} <button id="Click_to_explore"><a href="categories.html">Click to explore!</a></button> {% endcomment %}
+    {% comment %} <button onclick="window.location.href='/categories/'">Click to explore!</button> {% endcomment %}
+    {% comment %} <button onclick="window.location.href='{% url 'categories' %}'">Click to Explore Categories</button> {% endcomment %}
+    <button id="Click_to_explore"><a href="{% url 'categories' %}">Click to explore!</a></button>
+    </body>
+</html>

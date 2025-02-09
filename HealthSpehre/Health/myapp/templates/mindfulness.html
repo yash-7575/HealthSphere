@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mindfulness Webpage</title>
+    <link rel="stylesheet" href="{% static 'mindfulness.css' %}">
+</head>
+<body>
+    <header>
+        <div class="typewriter">
+            <h1>Welcome to Your Mindfulness Space</h1>
+        </div>
+        <p>"Be where you are; otherwise, you will miss your life."</p>
+    </header>
+
+    <!-- Section: Introduction -->
+    <div id="introduction">
+        <h2>What is Mindfulness?</h2>
+        <p>Mindfulness is the practice of being fully present in the moment. It helps reduce stress, improve focus, and enhance well-being.</p>
+    </div>
+
+    <!-- Section: Guided Meditations -->
+    <section id="guided-meditations">
+        <h2>Guided Meditations</h2>
+        <p>Select a session:</p>
+        <button onclick="playMeditation('short')">5 minutes</button>
+        <button onclick="playMeditation('medium')">10 minutes</button>
+        <button onclick="playMeditation('long')">15 minutes</button>
+    </section>
+
+    <div class="image-div1">
+        <img src="{% static 'image1.png' %}"></a>
+    </div>
+
+    <div class="image-div2">
+        <img src="{% static 'image2.png' %}"></a>
+    </div>
+
+    <div class="image-div3">
+        <img src="{% static 'image3.png' %}"></a>
+    </div>
+
+    <!-- Section: Breathing Exercises -->
+    <section id="breathing-exercises">
+        <h2>Breathing Exercises</h2>
+        <p>Follow the animation to guide your breath:</p>
+        <div id="breathing-circle"></div>
+        <p>Inhale for 4 seconds, hold for 4 seconds, exhale for 4 seconds.</p>
+        <button onclick="startBreathingExercise()">Start Exercise</button>
+    </section>
+
+    <!-- Section: Gratitude Journal -->
+    <section id="gratitude-journal">
+        <h2>Gratitude Journal</h2>
+        <textarea id="journal-input" placeholder="Write what you're grateful for..."></textarea>
+        <button onclick="saveGratitude()">Save Entry</button>
+        <div id="saved-entries"></div>
+    </section>
+
+    <!-- Section: Mood-Based Suggestions -->
+    <section id="mood-suggestions">
+        <h2>Mood-Based Suggestions</h2>
+        <label for="mood">How are you feeling?</label>
+        <select id="mood">
+            <option value="stressed">Stressed</option>
+            <option value="calm">Calm</option>
+            <option value="tired">Tired</option>
+        </select>
+        <button onclick="getSuggestions()">Get Suggestions</button>
+        <div id="suggestions"></div>
+    </section>
+
+    <script src="{% static 'mindfulness.js' %}"></script>
+</body>
+</html>

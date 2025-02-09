@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, .team, .goals, .scope {
+    text-align: center;
+    padding: 20px;
+    background-color: #f6bd60;
+    color: #721c24;
+}
+
+.team {
+    background-color: #f5cac3;
+    color: #721c24;
+}
+
+.goals {
+    background-color: #f6bd60;
+    color: #721c24;
+}
+
+.scope {
+    background-color: #f5cac3;
+    color: #721c24;
+}

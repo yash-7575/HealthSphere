@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'category01.css' %}">
+</head>
+<body>
+
+    <div class="navbar">
+        <p id="MindMatters" style="color: black;">HealthSphere</p>
+        <a href="{% url 'home' %}" id="ele1">Home</a>
+        <a href="{% url 'articles_and_resources' %}" id="ele2">Articles and Resources</a>
+        <a href="{% url 'meditation' %}" id="ele3">Meditation</a>
+        {% comment %} <a href="{% url 'sleep' %}" id="ele4">Sleep</a> {% endcomment %}
+        <a href="{% url 'mindfulness' %}" id="ele5">Mindfulness</a>
+        <a href="{% url 'exercise' %}" id="ele6">Exercise</a>
+        <a href="{% url 'plans' %}" id="ele7">Plans</a>
+        <a href="{% url 'for_business' %}" id="ele8">For business</a>
+        <a href="{% url 'about' %}" id="ele9">About</a>
+        <a href="{% url 'help' %}" id="ele10">Help</a>
+        <a href="{% url 'login' %}" id="ele11">Login</a>
+    </div>
+    
+    <div class="container">
+        <button id="btn1">Mindfulness Exercises</button>
+        <button id="btn2">Mood Tracker</button>
+        <button id="btn3">Sleep Tracker</button>
+        <button id="btn4">Daily Planner</button>
+        <button id="btn5">Fitness Challenges</button>
+        <button id="btn6">Calorie Counter</button>
+        </div>
+
+        <button id="Back"><a href="categories.html">Previous</a></button>
+
+</body>
+</html>
