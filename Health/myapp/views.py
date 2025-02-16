@@ -29,8 +29,8 @@ def features(request):
 def daily_planner(request):
     return render(request, 'daily_planner.html')
 
-def hydration_reminders(request):
-    return render(request, 'hydration_reminders.html')
+# def hydration_reminders(request):
+#     return render(request, 'hydration_reminders.html')
 
 def community(request):
     return render(request, 'community.html')
