@@ -1,0 +1,138 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meditation Page</title>
+  <link rel="stylesheet" href="{% static 'meditation.css' %}">
+</head>
+<body>
+
+  <!-- <section> 
+    <div class="flower-fall">
+      <div class="flower"></div>
+      <div class="flower"></div>
+      <div class="flower"></div>
+      <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+    <div class="flower"></div>
+  </div>
+</section> -->
+
+  <header>
+    <div class="typewriter">
+        <h1>Meditation Zone</h1>
+    </div>
+    <p>Find your peace and focus.</p>
+  </header>
+
+  <div class="image-div1">
+    <img src="{% static 'images/image10.jpg' %}" alt="leftimage1">
+  </div>
+  <!-- Timer Section -->
+  <section class="timer-section">
+    <h2>Set Your Timer</h2>
+    <label for="timer">Duration:</label>
+    <select id="timer">
+      <option value="2">2 minutes</option>
+      <option value="5">5 minutes</option>
+      <option value="10">10 minutes</option>
+    </select>
+    <button onclick="startTimer()">Start Timer</button>
+    <p id="timer-display"></p>
+  </section>
+
+  <div class="image-div2">
+    <img src="{% static 'images/image11.jpg' %}" alt="leftimage1">
+  </div>
+
+  <!-- Breathing Exercise -->
+  <section class="breathing-section">
+    <h2>Breathing Exercise</h2>
+    <p>Inhale when circle expands and exhale when it contracts</p>
+    <div id="breathing-circle"></div>
+  </section>
+
+  <!-- Quote Carousel -->
+  <section class="quote-section">  
+    <h2>Motivational Quotes</h2>
+    <div id="quote-carousel"></div>
+  </section>
+
+  <!-- Background Sounds -->
+  <section class="sound-section">
+    <h2>Ambient Sounds</h2>
+    <audio id="bg-sound" loop>
+      <source src="{% static 'music1.mp3' %}" type="audio/mpeg">
+    </audio>
+    <button onclick="toggleSound()">Play Ambient Sound</button>
+  </section>
+
+  <div class="image-div3">
+    <img src="{% static 'images/image12.jpg' %}" alt="leftimage1">
+  </div>
+
+  <div class="image-div4">
+    <img src="{% static 'images/image13.jpg' %}" alt="leftimage1">
+  </div>
+
+  <!-- Guided Meditation -->
+  <section class="meditation-section">
+    <h2>Guided Meditation</h2>
+    <audio controls>
+      <source src="{% static 'Guided_Meditation.mp3' %}" type="audio/mpeg">
+    </audio>
+  </section>
+
+  <!-- Quick Tips -->
+  <section class="tips-section">
+    <h2>Quick Tips</h2>
+    <div onclick="toggleTips()">Click for Tips</div>
+    <ol type="1" id="tips">
+      <p>Here are some quick tips for people who want to start meditating:</p><br>
+
+<li><b>Start small:</b> Begin with just 5-10 minutes a day and gradually increase the time as you get more comfortable.</li><br>
+<li><b>Find a quiet space:</b> Choose a peaceful and distraction-free environment where you can sit comfortably.</li><br>
+<li><b>Focus on your breath:</b> Simply observe your breathing. Inhale deeply and exhale slowly to help calm your mind.</li><br>
+<li><b>Be consistent:</b> Meditate at the same time each day to build a habit, whether it's in the morning or evening.</li><br>
+<li><b>Don't force it:</b> If your mind wanders, gently bring your focus back to your breath or a mantra. It’s okay if thoughts come and go.</li><br>
+
+<li><b>Use guided meditations:</b> If you’re unsure where to start, try using apps or online guided meditations for direction.</li><br>
+<li><b>Stay patient:</b> Results come with time. Meditation is about progress, not perfection.</li><br>
+<li><b>Choose a comfortable posture:</b> Sit on a chair or cross-legged on the floor—just make sure you’re relaxed and stable.</li><br>
+<li><b>Set an intention:</b> Before you start, set an intention for your practice (e.g., to find peace, focus, or gratitude).</li><br>
+<li><b>Accept thoughts without judgment:</b> It's natural to have thoughts pop up. Just acknowledge them and return to your meditation.</li><br>
+<li>Staying consistent with these tips can help develop a fulfilling meditation practice.</li><br>
+    </ol>
+  </section>
+
+  <!-- Interactive Image -->
+  <section class="interactive-image-section-1"></section>
+    <img src="{% static 'images/image1.jpg' %}" alt="roses" class="interactive-image">
+    <img src="{% static 'images/image2.jpg' %}" alt="abstract" class="interactive-image">
+    <img src="{% static 'images/image3.jpg' %}" alt="snowyrange" class="interactive-image">
+    <img src="{% static 'images/image4.jpg' %}" alt="calmbeach" class="interactive-image">
+  </section>
+  <br>
+  <section class="interactive-image-section-2">
+    <img src="{% static 'images/image5.jpg' %}" alt="candies" class="interactive-image">
+    <img src="{% static 'images/image6.jpg' %}" alt="abstract" class="interactive-image">
+    <img src="{% static 'images/image7.jpg' %}" alt="calmbeach" class="interactive-image">
+    <img src="{% static 'images/image8.jpg' %}" alt="candies" class="interactive-image">
+    <img src="{% static 'images/image9.jpg' %}" alt="abstract" class="interactive-image">
+  </section>
+  <section class="interactive-image-section-3">
+  </section>
+  <!-- JavaScript File -->
+  <script src="{% static 'meditation.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f8edeb;
+}
+
+.image img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

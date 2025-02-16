@@ -1,0 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9fc;
+    color: #333;
+    line-height: 1.6;
+}
+
+.interactive-image-section-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;   
+  }
+.interactive-image {
+    width: 250px;
+    transition: transform 0.3s;
+  }
+  
+  .interactive-image:hover {
+    height: 20%;
+    transform: scale(1.2);
+  }
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #70a1ff;
+    color: white;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.accordion {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.exercise-guide-item {
+    border-bottom: 1px solid #ccc;
+}
+
+.exercise-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    text-align: left;
+    background-color: #70a1ff;
+    color: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.exercise-button:hover {
+    background-color: #557fc4;
+}
+
+.exercise-guide-content {
+    padding: 15px;
+    display: none;
+    background-color: #f9f9f9;
+}
+
+.exercise-guide-content p {
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #70a1ff;
+    color: white;
+    margin-top: 20px;
+}

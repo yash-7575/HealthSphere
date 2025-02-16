@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WorqHat Health AI</title>
+    {% comment %} <link rel="stylesheet" href="{% static 'category01.css' %}"> {% endcomment %}
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            resize: vertical;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #response {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+        }
+        .response-content {
+            margin-bottom: 15px;
+            white-space: pre-wrap;
+        }
+        .response-meta {
+            font-size: 0.9em;
+            color: #666;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+        .loading {
+            display: none;
+            margin: 10px 0;
+            color: #666;
+        }
+        .error {
+            color: #dc3545;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    {% comment %} <div class="navbar">
+        <p id="MindMatters" style="color: black;">MindMatters</p>
+        <a href="{% url 'home' %}" id="ele1">Home</a>
+        <a href="{% url 'articles_and_resources' %}" id="ele2">Articles and Resources</a>
+        <a href="{% url 'meditation' %}" id="ele3">Meditation</a>
+        <a href="{% url 'sleep' %}" id="ele4">Sleep</a>
+        <a href="{% url 'mindfulness' %}" id="ele5">Mindfulness</a>
+        <a href="{% url 'mental_health' %}" id="ele6">Mental Health</a>
+        <a href="{% url 'plans' %}" id="ele7">Plans</a>
+        <a href="{% url 'for_business' %}" id="ele8">For business</a>
+        <a href="{% url 'about' %}" id="ele9">About</a>
+        <a href="{% url 'help' %}" id="ele10">Help</a>
+        <a href="{% url 'login' %}" id="ele11">Login</a>
+    </div> {% endcomment %}
+
+    <div class="container">
+        <h1>WorqHat Health AI</h1>
+        <textarea id="prompt" placeholder="You can ask me anything about your personalized diet plan, workout routines, calorie intake, sleep optimization, hydration reminders, and mental well-being! I can also help track your progress, educate you on health tips, and offer support to reach your health goals. Let’s get started...."></textarea>
+        <button onclick="generateResponse()">Generate Response</button>
+        <div id="loading" class="loading">Generating response...</div>
+        <div id="response"></div>
+    </div>
+
+    <script>
+        async function generateResponse() {
+            const prompt = document.getElementById('prompt').value;
+            const loading = document.getElementById('loading');
+            const responseDiv = document.getElementById('response');
+
+            if (!prompt) {
+                alert('Please enter a prompt');
+                return;
+            }
+
+            loading.style.display = 'block';
+            responseDiv.innerHTML = '';
+
+            try {
+                const response = await fetch('/generate/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ prompt: prompt })
+                });
+
+                const data = await response.json();
+                
+                if (response.ok) {
+                    responseDiv.innerHTML = `
+                        <div class="response-content">${data.content || 'No content received'}</div>
+                        <div class="response-meta">
+                            <p>Processing Time: ${data.processingTime}ms</p>
+                            <p>Processing ID: ${data.processingId}</p>
+                            <p>Processing Count: ${data.processingCount}</p>
+                            <p>Conversation ID: ${data.conversation_id}</p>
+                            <p>Model: ${data.model}</p>
+                        </div>
+                    `;
+                } else {
+                    responseDiv.innerHTML = `<div class="error">Error: ${data.error || 'Something went wrong'}</div>`;
+                }
+            } catch (error) {
+                responseDiv.innerHTML = `<div class="error">Error: ${error.message}</div>`;
+            } finally {
+                loading.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>

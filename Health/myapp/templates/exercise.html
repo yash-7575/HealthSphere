@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise page</title>
+    <link rel="stylesheet" href="{% static 'exercise.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Health and Fitness Guide</h1>
+        <p>Your guide to improving physical health</p>
+    </header>
+
+    <div class="exercise-guide">
+
+        <div class="exercise-guide-item">
+            <button class="exercise-button">How to lose Body Weight Fast</button>
+            <div class="exercise-guide-content">
+                <p>1. Maintain a calorie deficit by consuming fewer calories than you burn.</p>
+                <p>2. Incorporate strength training and cardio into your workout routine.</p>
+                <p>3. Focus on whole foods, reducing processed and sugary items.</p>
+                <p>4. Stay hydrated and ensure you get sufficient sleep.</p>
+                <section class="interactive-image-section-1">
+                    <img src="{% static 'quotes/quote1.jpg' %}" alt="quote1" class="interactive-image">
+                    <img src="{% static 'quotes/quote2.jpg' %}" alt="quote2" class="interactive-image">
+                    <img src="{% static 'quotes/quote3.jpg' %}" alt="quote3" class="interactive-image">
+                    <img src="{% static 'quotes/quote4.jpg' %}" alt="quote4" class="interactive-image">
+                    <img src="{% static 'quotes/quote5.jpg' %}" alt="quote5" class="interactive-image">
+                </section>
+            </div>
+        </div>
+
+        <div class="exercise-guide-item">
+            <button class="exercise-button">How to Increase Height</button>
+            <div class="exercise-guide-content">
+                <p>1. Practice stretching exercises like the cobra stretch, hanging, and swimming.</p>
+                <p>2. Improve posture by sitting and standing upright.</p>
+                <p>3. Ensure proper nutrition, including calcium and vitamin D for bone health.</p>
+                <p>4. Get enough sleep, as growth hormone is produced during deep sleep.</p>
+            </div>
+        </div>
+
+        <div class="exercise-guide-item">
+            <button class="exercise-button">How to Reduce Face Fat</button>
+            <div class="exercise-guide-content">
+                <p>1. Perform facial exercises like chin lifts, cheek puffs, and fish face.</p>
+                <p>2. Engage in cardio exercises to lose overall body fat.</p>
+                <p>3. Stay hydrated and reduce salt intake to prevent bloating.</p>
+                <p>4. Incorporate a balanced diet to support fat loss.</p>
+            </div>
+        </div>
+
+        <div class="exercise-guide-item">
+            <button class="exercise-button">How to Get a Good Posture</button>
+            <div class="exercise-guide-content">
+                <p>Practice exercises like planks, bridges, and yoga to strengthen your core and back.</p>
+                <p>Be mindful of your posture while sitting and standing; keep your back straight.</p>
+                <p>Use ergonomic chairs or equipment if you work long hours in front of a desk.</p>
+                <p>Regularly stretch your muscles to prevent tightness and slouching.</p>
+            </div>
+        </div>
+    </div>
+    <section class="interactive-image-section-1">
+        <img src="{% static 'quotes/quote1.jpg' %}" alt="quote1" class="interactive-image">
+        <img src="{% static 'quotes/quote2.jpg' %}" alt="quote2" class="interactive-image">
+        <img src="{% static 'quotes/quote3.jpg' %}" alt="quote3" class="interactive-image">
+        <img src="{% static 'quotes/quote4.jpg' %}" alt="quote4" class="interactive-image">
+        <img src="{% static 'quotes/quote5.jpg' %}" alt="quote5" class="interactive-image">
+    </section>
+    <script src="{% static 'exercise.js' %}"></script>
+</body>
+</html>

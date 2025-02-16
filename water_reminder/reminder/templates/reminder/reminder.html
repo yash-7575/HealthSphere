@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Water Reminder</title>
+    <link rel="stylesheet" href="{% static 'reminder.css' %}">
+    <script>
+        let reminderInterval; // Store the interval ID
+
+        function requestNotificationPermission() {
+            if (Notification.permission !== "granted") {
+                Notification.requestPermission();
+            }
+        }
+
+        function showBrowserNotification(username) {
+            if (Notification.permission === "granted") {
+                new Notification("Water Reminder", {
+                    body: `Hey ${username}, it's time to drink water!`,
+                    icon: "https://cdn-icons-png.flaticon.com/512/869/869869.png"
+                });
+            }
+        }
+
+        function startReminder() {
+            let username = document.getElementById("username").value;
+            let interval = document.getElementById("interval").value;
+            
+            fetch('/reminder/start/?username=' + username + '&interval=' + interval)
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.status);
+                    
+                    // Stop any previous interval before starting a new one
+                    clearInterval(reminderInterval);
+                    reminderInterval = setInterval(() => showBrowserNotification(username), interval * 1000);
+                });
+        }
+
+        function stopReminder() {
+            fetch('/reminder/stop/')
+                .then(response => response.json())
+                .then(data => {
+                    alert(data.status);
+                    clearInterval(reminderInterval); // Stop browser notifications
+                });
+        }
+    </script>
+</head>
+<body onload="requestNotificationPermission()">
+    <div class="container">
+        <h2>💧 Water Reminder</h2>
+        <label>Enter Your Name:</label>
+        <input type="text" id="username" placeholder="Your Name">
+        
+        <label>Reminder Interval (seconds):</label>
+        <input type="number" id="interval" value="60">
+        
+        <button onclick="startReminder()">Start Reminder</button>
+        <button onclick="stopReminder()">Stop Reminder</button>
+    </div>
+</body>
+</html>
