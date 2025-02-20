@@ -47,3 +47,4 @@ def stop_reminder(request):
 def hydration_reminders(request):
     """Renders the HTML page."""
     return render(request, "reminder/reminder.html")
+
