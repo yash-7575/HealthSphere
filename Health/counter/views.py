@@ -16,6 +16,6 @@ def home(request):
         except Exception as e:
             api = "oops! There was an error"
             print(e)
-        return render(request, 'home.html', {'api': api})
+        return render(request, 'calorie.html', {'api': api})
     else:
-        return render(request, 'home.html', {'query': 'Enter a valid query'})
+        return render(request, 'calorie.html', {'query': 'Enter a valid query'})

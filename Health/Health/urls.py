@@ -22,6 +22,9 @@ urlpatterns = [
     path('', include('myapp.urls')),
     path('hydration_reminders/', include('reminder.urls')),
     path('chatbotapp/', include('chatbotapp.urls')),
-    # path('calorie_finder/', include('counter.urls')),
+    path('calorie_finder/', include('counter.urls')),
+    path('community/', include('chat.urls')),
+    path('login/', include('Core.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     
 ]
