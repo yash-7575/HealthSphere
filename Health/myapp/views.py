@@ -20,8 +20,8 @@ def home(request):
 def ai_assistant(request):
         return render(request, 'ai_assistant.html')
 
-def calorie_finder(request):
-    return render(request, 'calorie_finder.html')
+# def calorie_finder(request):
+#     return render(request, 'calorie_finder.html')
 
 def features(request):
     return render(request, 'features.html')

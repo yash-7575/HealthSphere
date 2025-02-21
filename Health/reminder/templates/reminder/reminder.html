@@ -24,9 +24,13 @@
 
         function startReminder() {
             let username = document.getElementById("username").value || "User";
-            let interval = document.getElementById("interval").value || 60;
+            let intervalSeconds = parseInt(document.getElementById("interval_seconds").value) || 0;
+            let intervalMinutes = parseInt(document.getElementById("interval_minutes").value) || 0;
+            let intervalHours = parseInt(document.getElementById("interval_hours").value) || 0;
 
-            fetch('/hydration_reminders/start/?username=' + username + '&interval=' + interval)
+            let interval = intervalSeconds + (intervalMinutes * 60) + (intervalHours * 3600);
+
+            fetch(`/hydration_reminders/start/?username=${username}&interval_seconds=${intervalSeconds}&interval_minutes=${intervalMinutes}&interval_hours=${intervalHours}`)
                 .then(response => response.json())
                 .then(data => {
                     alert(data.status);
@@ -55,8 +59,15 @@
         <label>Enter Your Name:</label>
         <input type="text" id="username" placeholder="Your Name">
         
+        <label>Reminder Interval (hours):</label>
+        <input type="number" id="interval_hours" value="0">
+        
+        <label>Reminder Interval (minutes):</label>
+        <input type="number" id="interval_minutes" value="0">
+        
         <label>Reminder Interval (seconds):</label>
-        <input type="number" id="interval" value="60">
+        <input type="number" id="interval_seconds" value="0">
+        
         
         <button onclick="startReminder()">Start Reminder</button>
         <button onclick="stopReminder()">Stop Reminder</button>

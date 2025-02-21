@@ -21,5 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myapp.urls')),
     path('hydration_reminders/', include('reminder.urls')),
+    path('chatbotapp/', include('chatbotapp.urls')),
+    # path('calorie_finder/', include('counter.urls')),
     
 ]
