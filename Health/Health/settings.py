@@ -125,5 +125,23 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# API keys and sensitive settings
-WORQHAT_API_KEY = os.getenv('WORQHAT_API_KEY')
+LOGIN_URL = 'login'
+
+# EMAIL_HOST="smtp.gmail.com"
+# EMAIL_PORT=465
+# EMAIL_USE_SSL=True
+# EMAIL_HOST_USER="adesolaayodeji53@gmail.com"
+# EMAIL_HOST_PASSWORD="jjrc jimd yzcn ciws"
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'  # Copilot suggests correct values
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER = 'pranishbelsare@gmail.com'
+EMAIL_HOST_PASSWORD = 'fmme wqit vxrs hztf'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

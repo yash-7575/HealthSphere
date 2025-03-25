@@ -24,7 +24,7 @@ urlpatterns = [
     path('chatbotapp/', include('chatbotapp.urls')),
     path('calorie_finder/', include('counter.urls')),
     path('community/', include('chat.urls')),
-    path('login/', include('Core.urls')),
+    path('login1/', include('Core.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     
 ]

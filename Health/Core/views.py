@@ -15,7 +15,7 @@ from django.http import HttpResponse
 from django.core.mail import EmailMessage
 @login_required
 def Home(request):
-    return render(request, 'index.html')
+    return render(request, 'main_index.html')
 
 def RegisterView(request):
 
@@ -51,7 +51,7 @@ def RegisterView(request):
                 password=password
             )
             messages.success(request, "Account created. Login now")
-            return redirect('login')
+            return redirect('login1')
 
     return render(request, 'register.html')
 
@@ -70,15 +70,15 @@ def LoginView(request):
         
         else:
             messages.error(request, "Invalid login credentials")
-            return redirect('login')
+            return redirect('login1')
 
-    return render(request, 'login.html')
+    return render(request, 'login1.html')
 
 def LogoutView(request):
 
     logout(request)
 
-    return redirect('login')
+    return redirect('login1')
 
 def ForgotPassword(request):
 

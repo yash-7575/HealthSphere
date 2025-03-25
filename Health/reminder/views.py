@@ -15,6 +15,15 @@ def init_tts():
     tts_engine = pyttsx3.init()
     tts_engine.setProperty('rate', 150)  # Set speech rate
 
+    # List available voices
+    voices = tts_engine.getProperty('voices')
+    for voice in voices:
+        print(f"Voice: {voice.name}, ID: {voice.id}")
+
+    # Set desired voice (example: setting to the second voice in the list)
+    if len(voices) > 1:
+        tts_engine.setProperty('voice', voices[1].id)
+
 def speak(text):
     global tts_engine
     if tts_engine is None:

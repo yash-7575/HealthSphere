@@ -54,7 +54,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
                     <!-- <a href="index" class="nav-item nav-link active">Home</a> -->
-                    <a href="{% url 'about' %}" class="nav-item nav-link">About Us</a>
+                    <a href="#" class="nav-item nav-link">About Us</a>
                     <a href="{% url 'features' %}" class="nav-item nav-link">Features</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
@@ -62,19 +62,17 @@
                             <a href="{% url 'chatbotapp' %}" class="dropdown-item">AI Health Assistant</a>
                             <a href="{% url 'mindfulness' %}" class="dropdown-item">Mindfulness & Meditation</a>
                             <a href="{% url 'tracking' %}" class="dropdown-item">Smart Health Tracking</a>
-                            {% comment %} <a href="{% url 'interactive' %}" class="dropdown-item">Engaging Interface</a> {% endcomment %}
                             <a href="{% url 'calorie_finder' %}" class="dropdown-item">Calorie Finder</a>
                             <a href="{% url 'daily_planner' %}" class="dropdown-item">Daily Planner</a>
                             <a href="{% url 'hydration_reminders' %}" class="dropdown-item">Hydration Reminders</a>
                             <a href="{% url 'community' %}" class="dropdown-item">Community</a>
                             <a href="{% url 'testimonial' %}" class="dropdown-item">Testimonial</a>
-                            {% comment %} <a href="{% url '404' %}" class="dropdown-item">404 Error</a> {% endcomment %}
                         </div>
                     </div>
                     <a href="{% url 'contact' %}" class="nav-item nav-link">Contact Us</a>
-                    <a href="{% url 'login' %}" class="nav-item nav-link">Login</a>
+                    <a href="{% url 'login1' %}" class="nav-item nav-link">Login</a>
                 </div>
-                <a href="{% url 'join' %}" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Join Us<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="{% url 'home' %}" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Join Us<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->
@@ -392,7 +390,7 @@
             <div class="team-item position-relative">
                 <div class="team-text">
                     <h3>Yash Bhagyawant</h3>
-                    <p>AI Developer</p>
+                    <p>Authentication System Handling</p>
                     <div class="d-flex align-items-center">
                         <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                         <a class="btn btn-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
